@@ -1,0 +1,138 @@
+:root {
+  --bg-color: rgb(20, 30, 40);
+  --text-color: #f5f5dc;
+  --accent-color: #00beef;
+  --font-heading: 'Anton', sans-serif;
+  --font-body: 'Baskervville', serif;
+  --font-quote: 'Raleway', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  padding: 2rem;
+}
+
+.magazine-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-family: var(--font-heading);
+  font-size: 8rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.hero-subtitle,
+.author {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.text {
+  font-size: 1.8rem;
+  margin: 2rem 0;
+}
+
+.quote {
+  color: var(--accent-color);
+  font-size: 2.4rem;
+  text-align: center;
+  font-family: var(--font-quote);
+}
+
+.quote::before {
+  content: '" ';
+}
+
+.quote::after {
+  content: ' "';
+}
+
+.text-with-images {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  column-gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.lists {
+  list-style-type: none;
+}
+
+.list-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.image-wrapper {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: repeat(3, min-content);
+  gap: 2rem;
+  place-items: center;
+}
+
+.image-1,
+.image-3 {
+  grid-column: 1 / -1;
+  width: 100%;
+}
+
+.image-2 {
+  width: 100%;
+}
+
+.social-icons {
+  font-size: 2.2rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* Responsive Media Queries */
+
+@media only screen and (max-width: 720px) {
+  .image-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .text-with-images {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .hero-title {
+    font-size: 6rem;
+  }
+  .hero-subtitle,
+  .author,
+  .quote,
+  .list-title {
+    font-size: 1.8rem;
+  }
+  .social-icons {
+    font-size: 2rem;
+  }
+  .text {
+    font-size: 1.6rem;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .hero-title {
+    font-size: 4.5rem;
+  }
+}
